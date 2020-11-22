@@ -11,3 +11,22 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+// SINGLE TABLE component in tables#INDEX
+.single-table {
+  height: 40vh;
+  border: 1px solid darkgray;
+  box-shadow: 0 2px 4px darkgray;
+}
+
+.table-show-container {
+  background: #e0e0e0;
+  display: flex;
+  justify-content: space-around;
+  height: 90vh;
+
+  div {
+    flex-grow: 1;
+  }
+}
