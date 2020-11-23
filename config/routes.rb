@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :tables
+      resources :dishes, only: %i[index create destroy]
       # resources :reviews, only: %i[create destroy]
     end
   end

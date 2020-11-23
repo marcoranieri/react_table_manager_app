@@ -1,23 +1,25 @@
 import React,{ useState, useEffect, Fragment } from 'react'
 // import { BrowserRouter as Router, Link } from 'react-router-dom'
 
+// import axios from 'axios'
 
-const Dish = (props) => {
+
+const Order = (props) => {
+  // console.log("DISH PROPS  ",props)
   const [dish, setDish] = useState([]);
 
   useEffect(() => {
     setDish(props.dish)
   }, [])
 
+  // console.log("DISH ",dish)
+
 
   return (
-    <div
-      className='dish-container'
-      style={{border: `4px solid ` + dish.color}}
-    >
-      {props.dish.name}
+    <div className='order-container' style={{border: `4px solid ` + dish.color}}>
+      {dish.name}
     </div>
   )
 }
 
-export default Dish
+export default Order

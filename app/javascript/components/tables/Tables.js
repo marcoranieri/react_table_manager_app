@@ -8,6 +8,7 @@ import Table from './Table'
 const Tables = () => {
 
   const [tables, setTables] = useState([]);
+  const [dishes, setDishes] = useState([]);
 
   const fetchAllTables = () => {
     axios.get('/api/v1/tables.json')
@@ -26,14 +27,14 @@ const Tables = () => {
   }, [tables.length])
 
   console.log(tables);
-  console.log(findActiveTable(tables, 1));
+  // console.log(findActiveTable(tables, 1));
 
 
   return (
     <div>
       <h1 className="text-center">TABLES</h1>
       <div className="row">
-        { [1,2,3,4,5,6].map(i=> <Table setTable={setTable} tableNumber={i} key={`table-${i}`}/> ) }
+        { [1,2,3,4,5,6].map(i => <Table setTable={setTable} tableNumber={i} key={`table-${i}`}/>) }
       </div>
     </div>
   )

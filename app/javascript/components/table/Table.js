@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 import axios from 'axios'
 
-import Dish from './Dish'
+import Order  from './Order'
+import Dishes from './Dishes'
 
 
 const Table = (props) => {
   const [table, setTable]   = useState([]);
   const [dishes, setDishes] = useState([]);
+  const [orders, setOrders] = useState([]);
 
   // console.log(props);
 
@@ -26,7 +28,7 @@ const Table = (props) => {
     const id = props.match.params.id
     axios.get(`/api/v1/tables/${id}.json`)
     .then( resp => {
-      setDishes(
+      setOrders(
         resp.data.included.map((dish)=>{
           return {
             id:          `${dish.id}`,
@@ -41,16 +43,18 @@ const Table = (props) => {
     .catch( resp => console.log(resp))
   }, [])
 
-
+  console.log("TABLE PROPS ",props);
   return (
     <Fragment>
       <h1>Table {props.tableNumber}</h1>
 
       <div className="table-show-container">
-        <div className="dishes-wrapper">
-          { dishes.map(dish => <Dish dish={dish} key={`dish-${dish.id}`} /> )}
+        <div className="dishes-grid">
+          <Dishes />
         </div>
-        <div>[ORDERS HERE]</div>
+        <div className="orders-wrapper">
+          { orders.length === 0 ? "" : orders.map(dish => <Order dish={dish} key={`dish-${dish.id}`} /> )}
+        </div>
       </div>
     </Fragment>
   )

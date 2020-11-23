@@ -32,7 +32,6 @@ COLORS = {
   contorno:  "#d6fffe",
   dolce:     "#e6e8fa",
   bevande:   "#cae9ff",
-  # vino:      "#990033",
   vino:      "#d8a1c4",
 
   default: "#ffffc7"
@@ -152,13 +151,6 @@ DISHES = [
     option: OPTION_TAG.sample(2)
   },
   {
-    name: 'Acqua',
-    price: 200,
-    tag: 'bevande',
-    allergen: ALLERGEN_TAG.sample(3),
-    option: OPTION_TAG.sample(2)
-  },
-  {
     name: 'Vino quarto',
     price: 400,
     tag: 'vino',
@@ -176,6 +168,13 @@ DISHES = [
     name: 'Vino Bott.',
     price: 1000,
     tag: 'vino',
+    allergen: ALLERGEN_TAG.sample(3),
+    option: OPTION_TAG.sample(2)
+  },
+  {
+    name: 'Acqua',
+    price: 200,
+    tag: 'bevande',
     allergen: ALLERGEN_TAG.sample(3),
     option: OPTION_TAG.sample(2)
   },

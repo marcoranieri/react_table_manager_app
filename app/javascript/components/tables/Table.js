@@ -8,7 +8,7 @@ const Table = (props) => {
   const [table, setTable] = useState([]);
 
   useEffect(() => {
-    console.log({props});
+    console.log("tables/table props ",props);
   }, []) // run ONLY IF airlines.length changes
   // useEffect(() => {
   //   axios.get('/api/v1/airlines.json')
@@ -23,7 +23,7 @@ const Table = (props) => {
       <h3>
         <Link to={"/tables/" + props.tableNumber}>Table {props.tableNumber}</Link>
       </h3>
-      <p>Table DISHES here</p>
+      <p>Table ORDERS here</p>
 
     </div>
   )
